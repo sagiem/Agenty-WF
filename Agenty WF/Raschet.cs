@@ -62,7 +62,7 @@ namespace Agenty_WF
             //Загружаем документ
             Microsoft.Office.Interop.Word.Document doc = null;
 
-            object fileName = @"C:\Users\kashinmv\Desktop\прога\Agenty WF\files\otchet.docx";
+            object fileName = @"C:\\Users\\user\\Desktop\\прога\\Agenty-WF\\files\\otchet.docx";
             object falseValue = false;
             object trueValue = true;
             object missing = Type.Missing;

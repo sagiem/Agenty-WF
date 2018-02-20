@@ -27,7 +27,7 @@ namespace Agenty_WF
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DB = new SQLiteConnection("Data Source=C:\\Users\\kashinmv\\Desktop\\otchet_art.db");
+            DB = new SQLiteConnection("Data Source=C:\\Users\\user\\Desktop\\прога\\Agenty-WF\\files\\otchet_art.db");
             DB.Open();
         }
 
