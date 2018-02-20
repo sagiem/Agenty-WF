@@ -55,7 +55,7 @@
             this.tabControl1.Location = new System.Drawing.Point(13, 13);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(405, 300);
+            this.tabControl1.Size = new System.Drawing.Size(504, 300);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -76,7 +76,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(397, 274);
+            this.tabPage1.Size = new System.Drawing.Size(496, 274);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Юридические лица";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -91,7 +91,7 @@
             // 
             // button_editYR
             // 
-            this.button_editYR.Location = new System.Drawing.Point(281, 10);
+            this.button_editYR.Location = new System.Drawing.Point(396, 10);
             this.button_editYR.Name = "button_editYR";
             this.button_editYR.Size = new System.Drawing.Size(95, 23);
             this.button_editYR.TabIndex = 11;
@@ -168,8 +168,9 @@
             this.Combob_YR.FormattingEnabled = true;
             this.Combob_YR.Location = new System.Drawing.Point(104, 12);
             this.Combob_YR.Name = "Combob_YR";
-            this.Combob_YR.Size = new System.Drawing.Size(121, 21);
+            this.Combob_YR.Size = new System.Drawing.Size(271, 21);
             this.Combob_YR.TabIndex = 3;
+            this.Combob_YR.Click += new System.EventHandler(this.Combob_YR_Click);
             // 
             // label3
             // 
@@ -215,10 +216,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 325);
+            this.ClientSize = new System.Drawing.Size(529, 325);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Отчет-акт";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

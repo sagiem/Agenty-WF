@@ -8,3 +8,12 @@ C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Debug\Agenty WF.csp
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Debug\Agenty WF.csproj.CoreCompileInputs.cache
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Debug\Agenty WF.exe
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Debug\Agenty WF.pdb
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Debug\EntityFramework.dll
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Debug\System.Data.SQLite.dll
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Debug\EntityFramework.xml
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Debug\System.Data.SQLite.xml
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Debug\System.Data.SQLite.dll.config
