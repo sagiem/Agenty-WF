@@ -27,7 +27,7 @@ namespace Agenty_WF
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DB = new SQLiteConnection("Data Source=otchet_art.db");
+            DB = new SQLiteConnection("Data Source=data\\otchet_art.db");
             DB.Open();
         }
 
@@ -60,17 +60,17 @@ namespace Agenty_WF
 
         private void button_otchetYR_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text);
+            //try
+            //{
+                Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text, Combob_YR.Text);
                 raschet.Exelreader();
                 raschet.ExelOtchet();
-            }
+            //}
 
-            catch(Exception)
-            {
-                MessageBox.Show("Файл Excel не выбран либо не верный формат");
-            }
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Файл Excel не выбран либо не верный формат");
+            //}
         }
 
         private void button_aktYR_Click(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace Agenty_WF
 
             try
             {
-                Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text);
+                Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text, Combob_YR.Text);
                 raschet.Exelreader();
                 raschet.ExelAkt();
             }

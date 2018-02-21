@@ -13,16 +13,16 @@ namespace Agenty_WF
         public string Vlice;
         public string Osnovanie;
         public string Dogovor;
-        public string DataDog;
+        //public string DataDog;
         public string Podpisant;
 
-        public YRdb(string Vlice, string Osnovanie, string Dogovor, string DataDog, string Podpisant)
+        public YRdb(string Vlice, string Osnovanie, string Dogovor, string Podpisant)
         {
             //this.Id = Id;
             this.Vlice = Vlice;
             this.Osnovanie = Osnovanie;
             this.Dogovor = Dogovor;
-            this.DataDog = DataDog;
+            //this.DataDog = DataDog;
             this.Podpisant = Podpisant;
         }
 

@@ -12,7 +12,8 @@ namespace Agenty_WF
     class Raschet
     {
         public string file;
-        string b, c, e, dateYR, aktnYR;
+        string b, c, e, dateYR, aktnYR, AG;
+        string nashOrg, nashvlic, nashOsn, nashPodp;
         decimal d;
         decimal sum = 0;
         int z = 14;
@@ -23,22 +24,23 @@ namespace Agenty_WF
         Dictionary<string, YRdb> yr = new Dictionary<string, YRdb>();
 
 
-        public Raschet(string file, string dateYR, string aktnYR)
+        public Raschet(string file, string dateYR, string aktnYR, string AG)
         {
             this.file = file;
             this.dateYR = dateYR;
             this.aktnYR = aktnYR;
+            this.AG = AG;
         }
 
         public void Yrread()
         {
-            DB = new SQLiteConnection("Data Source=otchet_art.db");
+            DB = new SQLiteConnection("Data Source=data\\otchet_art.db");
             DB.Open();
             SQLiteCommand command = new SQLiteCommand("select * from Агенты", DB);
             DbDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                
+
                 string Agent = ((string)reader["Агент"]);
                 string Vlice = ((string)reader["Влице"]);
                 string Osnovanie = ((string)reader["Основание"]);
@@ -46,14 +48,25 @@ namespace Agenty_WF
                 string DataDog = ((string)reader["Дата"]);
                 string Podpisant = ((string)reader["Подписант"]);
 
-                YRdb yRdb = new YRdb(Vlice, Osnovanie, Dogovor, DataDog, Podpisant);
+                YRdb yRdb = new YRdb(Vlice, Osnovanie, Dogovor, Podpisant);
                 yr.Add(Agent, yRdb);
             }
 
+
+
+
+            //SQLiteCommand command1 = new SQLiteCommand("select * from Наша", DB);
+            //DbDataReader reader1 = command1.ExecuteReader();
+
+
+            //    nashOrg = ((string)reader1["Организация"]);
+            //    nashvlic = ((string)reader1["Влице"]);
+            //    nashOsn = ((string)reader1["Основание"]);
+            //    nashPodp = ((string)reader1["Подписант"]);
+            
+
             DB.Close();
         }
-
-
 
     public void Exelreader()
         {
@@ -86,6 +99,7 @@ namespace Agenty_WF
 
         public void ExelOtchet()
         {
+            
 
             //Создаём новый Word.Application
             Microsoft.Office.Interop.Word.Application app = new Microsoft.Office.Interop.Word.Application();
@@ -93,7 +107,7 @@ namespace Agenty_WF
             //Загружаем документ
             Microsoft.Office.Interop.Word.Document doc = null;
 
-            object fileName = @"C:\\Users\\kashinmv\\Desktop\\прога\\Agenty WF\\files\\otchet.docx";
+            object fileName = @"C:\Users\kashinmv\Desktop\прога\Agenty WF\files\otchet.docx";
             object falseValue = false;
             object trueValue = true;
             object missing = Type.Missing;
@@ -124,32 +138,56 @@ namespace Agenty_WF
             tbl.Rows[i + 1].Cells[2].Range.Text = (i - 1).ToString();
             tbl.Rows[i + 1].Cells[3].Range.Text = (sum).ToString();
 
+            Yrread();
 
             //Очищаем параметры поиска
             app.Selection.Find.ClearFormatting();
             app.Selection.Find.Replacement.ClearFormatting();
-
             //Задаём параметры замены и выполняем замену.
-
-            object findText = "[data]";
+            object findText = "[акт]";
             object replaceWith = dateYR;
             object replace = 2;
-
-
-
 
             app.Selection.Find.Execute(ref findText, ref missing, ref missing, ref missing,
             ref missing, ref missing, ref missing, ref missing, ref missing, ref replaceWith,
             ref replace, ref missing, ref missing, ref missing, ref missing);
 
-            object findText1 = "[ссылка акт]";
-            object replaceWith1 = "№ "+aktnYR + " от " + dateYR;
-            object replace1 = 2;
 
+            //Очищаем параметры поиска
+            app.Selection.Find.ClearFormatting();
+            app.Selection.Find.Replacement.ClearFormatting();
+            //Задаём параметры замены и выполняем замену.
+            object findText1 = "[дата_акта]";
+            object replaceWith1 = dateYR;
+            object replace1 = 2;
 
             app.Selection.Find.Execute(ref findText1, ref missing, ref missing, ref missing,
             ref missing, ref missing, ref missing, ref missing, ref missing, ref replaceWith1,
             ref replace1, ref missing, ref missing, ref missing, ref missing);
+
+            //Очищаем параметры поиска
+            app.Selection.Find.ClearFormatting();
+            app.Selection.Find.Replacement.ClearFormatting();
+            //Задаём параметры замены и выполняем замену.
+            object findText2 = "[data]";
+            object replaceWith2 = dateYR;
+            object replace2 = 2;
+
+            app.Selection.Find.Execute(ref findText2, ref missing, ref missing, ref missing,
+            ref missing, ref missing, ref missing, ref missing, ref missing, ref replaceWith2,
+            ref replace2, ref missing, ref missing, ref missing, ref missing);
+
+            //Очищаем параметры поиска
+            app.Selection.Find.ClearFormatting();
+            app.Selection.Find.Replacement.ClearFormatting();
+            //Задаём параметры замены и выполняем замену.
+            object findText3 = "[договор]";
+            object replaceWith3 = (yr[AG]).Dogovor;
+            object replace3 = 2;
+
+            app.Selection.Find.Execute(ref findText3, ref missing, ref missing, ref missing,
+            ref missing, ref missing, ref missing, ref missing, ref missing, ref replaceWith3,
+            ref replace3, ref missing, ref missing, ref missing, ref missing);
 
 
 
