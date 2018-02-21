@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Data.SQLite;
+using System.Data.Common;
 
 namespace Agenty_WF
 {
@@ -15,8 +17,10 @@ namespace Agenty_WF
         decimal sum = 0;
         int z = 14;
         int t = 1;
+        private SQLiteConnection DB;
 
         List<ExcelOpen> exp = new List<ExcelOpen>();
+        Dictionary<string, YRdb> yr = new Dictionary<string, YRdb>();
 
 
         public Raschet(string file, string dateYR, string aktnYR)
@@ -25,8 +29,35 @@ namespace Agenty_WF
             this.dateYR = dateYR;
             this.aktnYR = aktnYR;
         }
-        public void Exelreader()
+
+        public void Yrread()
         {
+            DB = new SQLiteConnection("Data Source=otchet_art.db");
+            DB.Open();
+            SQLiteCommand command = new SQLiteCommand("select * from Агенты", DB);
+            DbDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                
+                string Agent = ((string)reader["Агент"]);
+                string Vlice = ((string)reader["Влице"]);
+                string Osnovanie = ((string)reader["Основание"]);
+                string Dogovor = ((string)reader["Договор"]);
+                string DataDog = ((string)reader["Дата"]);
+                string Podpisant = ((string)reader["Подписант"]);
+
+                YRdb yRdb = new YRdb(Vlice, Osnovanie, Dogovor, DataDog, Podpisant);
+                yr.Add(Agent, yRdb);
+            }
+
+            DB.Close();
+        }
+
+
+
+    public void Exelreader()
+        {
+
             Excel.Application ObjWorkExcel = new Excel.Application(); //открыть эксель
             Excel.Workbook ObjWorkBook = ObjWorkExcel.Workbooks.Open(file); //открыть файл
             Excel.Worksheet ObjWorkSheet = (Excel.Worksheet)ObjWorkBook.Sheets[1]; //получить 1 лист
@@ -62,7 +93,7 @@ namespace Agenty_WF
             //Загружаем документ
             Microsoft.Office.Interop.Word.Document doc = null;
 
-            object fileName = @"C:\\Users\\user\\Desktop\\прога\\Agenty-WF\\files\\otchet.docx";
+            object fileName = @"C:\\Users\\kashinmv\\Desktop\\прога\\Agenty WF\\files\\otchet.docx";
             object falseValue = false;
             object trueValue = true;
             object missing = Type.Missing;
@@ -124,34 +155,7 @@ namespace Agenty_WF
 
             //Открываем документ для просмотра.
             app.Visible = true;
-            //app.Quit(); // выйти из word
             GC.Collect(); // убрать за  собой
-
-
-            //// Создаём экземпляр нашего приложения
-            //Excel.Application excelApp = new Excel.Application();
-            //// Создаём экземпляр рабочий книги Excel
-            //Excel.Workbook workBook;
-            //// Создаём экземпляр листа Excel
-            //Excel.Worksheet workSheet;
-
-            //workBook = excelApp.Workbooks.Add();
-            //workSheet = (Excel.Worksheet)workBook.Worksheets.get_Item(1);
-
-            //// Заполняем первую строку числами от 1 до 10
-            //for (int j = 1; j <= exp.Count(); j++)
-            //{
-            //    workSheet.Cells[j, 1] = (exp[j-1]).a;
-            //    workSheet.Cells[j, 2] = (exp[j - 1]).c;
-            //    workSheet.Cells[j, 3] = (exp[j - 1]).d;
-            //}
-
-            //// Открываем созданный excel-файл
-            //excelApp.Visible = true;
-            //excelApp.UserControl = true;
-
-
-
         }
 
         public void ExelAkt()
@@ -208,12 +212,9 @@ namespace Agenty_WF
             app.Selection.Find.Execute(ref findText1, ref missing, ref missing, ref missing,
             ref missing, ref missing, ref missing, ref missing, ref missing, ref replaceWith1,
             ref replace1, ref missing, ref missing, ref missing, ref missing);
-
-
-
+            
             //Открываем документ для просмотра.
             app.Visible = true;
-            //app.Quit(); // выйти из word
             GC.Collect(); // убрать за  собой
         }
     }

@@ -27,14 +27,22 @@ namespace Agenty_WF
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DB = new SQLiteConnection("Data Source=C:\\Users\\user\\Desktop\\прога\\Agenty-WF\\files\\otchet_art.db");
+            DB = new SQLiteConnection("Data Source=otchet_art.db");
             DB.Open();
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private void Combob_YR_Click(object sender, EventArgs e)
         {
-
+            SQLiteCommand command = new SQLiteCommand("select * from Агенты", DB);
+            //DB.Open();
+            Combob_YR.Items.Clear();
+            DbDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Combob_YR.Items.Add((string)reader["Агент"]);         //СтолбецТаблицы
+            }
         }
+       
 
         private void button_openfileYR_Click(object sender, EventArgs e)
         {
@@ -52,30 +60,34 @@ namespace Agenty_WF
 
         private void button_otchetYR_Click(object sender, EventArgs e)
         {
-            Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text);
-            raschet.Exelreader();
-            raschet.ExelOtchet();
+            try
+            {
+                Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text);
+                raschet.Exelreader();
+                raschet.ExelOtchet();
+            }
+
+            catch(Exception)
+            {
+                MessageBox.Show("Файл Excel не выбран либо не верный формат");
+            }
         }
 
         private void button_aktYR_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(date_aktYR.Text);
-            
-        }
 
-        private void Combob_YR_Click(object sender, EventArgs e)
-        {
-            SQLiteCommand command = new SQLiteCommand("select * from Агенты", DB);
-            //DB.Open();
-            Combob_YR.Items.Clear();
-            DbDataReader reader = command.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                Combob_YR.Items.Add((string)reader["Агент"]);         //СтолбецТаблицы
-
+                Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text);
+                raschet.Exelreader();
+                raschet.ExelAkt();
             }
-        }
 
-       
+            catch (Exception)
+            {
+                MessageBox.Show("Файл Excel не выбран либо не верный формат");
+            }
+
+        }       
     }
 }
