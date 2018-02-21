@@ -52,18 +52,19 @@ namespace Agenty_WF
                 yr.Add(Agent, yRdb);
             }
 
+            //DB = new SQLiteConnection("Data Source=data\\otchet_art.db");
+            //DB.Open();
+            SQLiteCommand commandn = new SQLiteCommand("select * from Наша", DB);
+            DbDataReader readern = commandn.ExecuteReader();
+            while (readern.Read())
+            {
 
+                nashOrg = ((string)readern["Организация"]);
+                nashvlic = ((string)readern["Влице"]);
+                nashOsn = ((string)readern["Основание"]);
+                nashPodp = ((string)readern["Подписант"]);
 
-
-            //SQLiteCommand command1 = new SQLiteCommand("select * from Наша", DB);
-            //DbDataReader reader1 = command1.ExecuteReader();
-
-
-            //    nashOrg = ((string)reader1["Организация"]);
-            //    nashvlic = ((string)reader1["Влице"]);
-            //    nashOsn = ((string)reader1["Основание"]);
-            //    nashPodp = ((string)reader1["Подписант"]);
-            
+            }
 
             DB.Close();
         }
@@ -107,7 +108,7 @@ namespace Agenty_WF
             //Загружаем документ
             Microsoft.Office.Interop.Word.Document doc = null;
 
-            object fileName = @"C:\Users\kashinmv\Desktop\прога\Agenty WF\files\otchet.docx";
+            object fileName = @"C:\Users\user\Desktop\прога\Agenty-WF\files\otchet.docx";
             object falseValue = false;
             object trueValue = true;
             object missing = Type.Missing;
