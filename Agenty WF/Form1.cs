@@ -62,7 +62,7 @@ namespace Agenty_WF
         {
             //try
             //{
-                Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text, Combob_YR.Text);
+                Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text, Combob_YR.Text, textb_oplataYR.Text);
                 raschet.Exelreader();
                 raschet.ExelOtchet();
             //}
@@ -76,17 +76,17 @@ namespace Agenty_WF
         private void button_aktYR_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text, Combob_YR.Text);
+            //try
+            //{
+                Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text, Combob_YR.Text, textb_oplataYR.Text);
                 raschet.Exelreader();
                 raschet.ExelAkt();
-            }
+            //}
 
-            catch (Exception)
-            {
-                MessageBox.Show("Файл Excel не выбран либо не верный формат");
-            }
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Файл Excel не выбран либо не верный формат");
+            //}
 
         }       
     }

@@ -10,9 +10,9 @@ namespace Agenty_WF
     {
         public int a;
         public string c;
-        public decimal d;
+        public double d;
 
-        public ExcelOpen(int a, string c, decimal d)
+        public ExcelOpen(int a, string c, double d)
         {
             this.a = a;
             this.c = c;

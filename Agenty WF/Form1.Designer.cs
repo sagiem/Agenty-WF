@@ -160,7 +160,7 @@
             this.textb_oplataYR.Name = "textb_oplataYR";
             this.textb_oplataYR.Size = new System.Drawing.Size(60, 20);
             this.textb_oplataYR.TabIndex = 4;
-            this.textb_oplataYR.Text = "9.5";
+            this.textb_oplataYR.Text = "9,5";
             // 
             // Combob_YR
             // 
@@ -206,7 +206,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(397, 274);
+            this.tabPage2.Size = new System.Drawing.Size(496, 274);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Физические лица";
             this.tabPage2.UseVisualStyleBackColor = true;
