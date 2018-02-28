@@ -428,7 +428,7 @@ namespace Agenty_WF
 
 
             object findText9 = "[сумма]";
-            object replaceWith9 = (sum/100)*oplataYR;
+            object replaceWith9 = Math.Floor((sum/100)*oplataYR);
             object replace9 = 2;
 
             app.Selection.Find.Execute(ref findText9, ref missing, ref missing, ref missing,
@@ -443,7 +443,7 @@ namespace Agenty_WF
 
 
             object findText10 = "[сумма2]";
-            object replaceWith10 = RusNumber.Str(Convert.ToInt32((sum / 100) * oplataYR));
+            object replaceWith10 = RusNumber.Str(Convert.ToInt32(Math.Floor((sum / 100) * oplataYR)));
             object replace10 = 2;
 
             app.Selection.Find.Execute(ref findText10, ref missing, ref missing, ref missing,
@@ -458,7 +458,7 @@ namespace Agenty_WF
 
 
             object findText11 = "[сумма3]";
-            object replaceWith11 = RusNumber.Kop(oplataYR);
+            object replaceWith11 = RusNumber.Kop(Math.Round(((sum / 100) * oplataYR),2));
             object replace11 = 2;
 
             app.Selection.Find.Execute(ref findText11, ref missing, ref missing, ref missing,
