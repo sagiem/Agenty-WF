@@ -160,7 +160,7 @@
             this.textb_oplataYR.Name = "textb_oplataYR";
             this.textb_oplataYR.Size = new System.Drawing.Size(60, 20);
             this.textb_oplataYR.TabIndex = 4;
-            this.textb_oplataYR.Text = "9,5";
+            this.textb_oplataYR.Text = "9";
             // 
             // Combob_YR
             // 

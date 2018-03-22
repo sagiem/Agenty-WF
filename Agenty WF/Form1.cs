@@ -27,7 +27,7 @@ namespace Agenty_WF
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DB = new SQLiteConnection("Data Source=data\\otchet_art.db");
+            DB = new SQLiteConnection("Data Source=C:\\Agenty\\data\\otchet_art.db");
             DB.Open();
         }
 
@@ -48,8 +48,8 @@ namespace Agenty_WF
         {
             OpenFileDialog openfile = new OpenFileDialog();
             openfile.Multiselect = false;
-            openfile.DefaultExt = "*.xls;*.xlsx";
-            openfile.Filter = "Microsoft Excel (*.xls*)|*.xls*";
+            openfile.DefaultExt = "*.xml;.xls;*.xlsx";
+            openfile.Filter = "Microsoft Excel (*.xls*;*.xml*)|*.xls*;*.xml*";
             openfile.Title = "Выберите документ Excel";
             openfile.ShowDialog();
             if (openfile.FileName != null)
@@ -60,34 +60,38 @@ namespace Agenty_WF
 
         private void button_otchetYR_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-                Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text, Combob_YR.Text, textb_oplataYR.Text);
-                raschet.Exelreader();
-                raschet.ExelOtchet();
-            //}
+            if (Combob_YR != null)
+            {
+                try
+                {
+                    Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text, Combob_YR.Text, textb_oplataYR.Text);
+                    raschet.Exelreader();
+                    raschet.ExelOtchet();
+                }
 
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("Файл Excel не выбран либо не верный формат");
-            //}
-        }
+                catch (Exception)
+                {
+                    MessageBox.Show("Файл Excel не выбран либо не верный формат");
+                }
+            }
+
+}
 
         private void button_aktYR_Click(object sender, EventArgs e)
         {
 
-            //try
-            //{
+            try
+            {
                 Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text, Combob_YR.Text, textb_oplataYR.Text);
                 raschet.Exelreader();
                 raschet.ExelAkt();
-            //}
+        }
 
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("Файл Excel не выбран либо не верный формат");
-            //}
+            catch (Exception)
+            {
+                MessageBox.Show("Файл Excel не выбран либо не верный формат");
+            }
 
-        }       
+}       
     }
 }

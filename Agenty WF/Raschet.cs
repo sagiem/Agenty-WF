@@ -88,7 +88,7 @@ namespace Agenty_WF
                 if (b.Length == 10)
                 {
                     e = b;
-                    d = Double.Parse(c.Replace(" ", ""));
+                    d = Double.Parse((c.Replace(" ", "")).Replace(".", ","));
                     ExcelOpen excelOpen = new ExcelOpen(t, e, d);
                     exp.Add(excelOpen);
                     t++;
