@@ -17,3 +17,4 @@ C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Release\Agenty WF.c
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Release\Agenty WF.csproj.CoreCompileInputs.cache
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Release\Agenty WF.exe
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Release\Agenty WF.pdb
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Release\1224.ico

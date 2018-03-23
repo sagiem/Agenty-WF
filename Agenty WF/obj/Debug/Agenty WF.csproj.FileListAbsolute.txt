@@ -36,3 +36,4 @@ C:\Users\user\Desktop\прога\Agenty-WF\Agenty WF\obj\Debug\Agenty WF.csproj.
 C:\Users\user\Desktop\прога\Agenty-WF\Agenty WF\obj\Debug\Agenty WF.csproj.CoreCompileInputs.cache
 C:\Users\user\Desktop\прога\Agenty-WF\Agenty WF\obj\Debug\Agenty WF.exe
 C:\Users\user\Desktop\прога\Agenty-WF\Agenty WF\obj\Debug\Agenty WF.pdb
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Debug\1224.ico
