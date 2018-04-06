@@ -85,7 +85,7 @@ namespace Agenty_WF
             {
                 b = ObjWorkSheet.Cells[z, 3].Text.ToString();//считываем текст в строку
                 c = ObjWorkSheet.Cells[z, 4].Text.ToString();
-                c = (c.ToUpper()).Replace("EEE", "").Replace("ЕЕЕ", "").Replace("MMM", "").Replace("МММ", "");
+                b = (b.ToUpper()).Replace("EEE", "").Replace("ЕЕЕ", "").Replace("MMM", "").Replace("МММ", "");
                 if (b.Length == 10)
                 {
                     e = b;
