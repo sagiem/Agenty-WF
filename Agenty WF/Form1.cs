@@ -42,7 +42,7 @@ namespace Agenty_WF
                 Combob_YR.Items.Add((string)reader["Агент"]);         //СтолбецТаблицы
             }
         }
-       
+
 
         private void button_openfileYR_Click(object sender, EventArgs e)
         {
@@ -60,38 +60,38 @@ namespace Agenty_WF
 
         private void button_otchetYR_Click(object sender, EventArgs e)
         {
-            if (Combob_YR != null)
-            {
-                try
-                {
-                    Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text, Combob_YR.Text, textb_oplataYR.Text);
-                    raschet.Exelreader();
-                    raschet.ExelOtchet();
-                }
+            //if (Combob_YR != null)
+            //{
+            //try
+            //{
+            Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text, Combob_YR.Text, textb_oplataYR.Text);
+            raschet.Exelreader();
+            raschet.ExelOtchet();
+            //}
 
-                catch (Exception)
-                {
-                    MessageBox.Show("Файл Excel не выбран либо не верный формат");
-                }
-            }
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Файл Excel не выбран либо не верный формат");
+            //}
+            //}
 
-}
+        }
 
         private void button_aktYR_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text, Combob_YR.Text, textb_oplataYR.Text);
-                raschet.Exelreader();
-                raschet.ExelAkt();
+            //try
+            //{
+            Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text, Combob_YR.Text, textb_oplataYR.Text);
+            raschet.Exelreader();
+            raschet.ExelAkt();
         }
 
-            catch (Exception)
-            {
-                MessageBox.Show("Файл Excel не выбран либо не верный формат");
-            }
+        //catch (Exception)
+        //{
+        //    MessageBox.Show("Файл Excel не выбран либо не верный формат");
+        //}
 
-}       
     }
 }
+
