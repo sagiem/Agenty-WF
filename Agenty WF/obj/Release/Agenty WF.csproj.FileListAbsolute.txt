@@ -10,7 +10,6 @@ C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Release\EntityFrame
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Release\EntityFramework.SqlServer.xml
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Release\System.Data.SQLite.xml
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Release\System.Data.SQLite.dll.config
-C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Release\Agenty WF.csprojResolveAssemblyReference.cache
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Release\Agenty_WF.Form1.resources
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Release\Agenty_WF.Properties.Resources.resources
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Release\Agenty WF.csproj.GenerateResource.Cache
@@ -18,3 +17,6 @@ C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Release\Agenty WF.c
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Release\Agenty WF.exe
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Release\Agenty WF.pdb
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Release\1224.ico
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Release\Agenty WF.csprojAssemblyReference.cache
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Release\Agenty WF.csproj.ResolveComReference.cache
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Release\Agenty WF.csproj.CopyComplete

@@ -1,7 +1,6 @@
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Debug\Agenty WF.exe.config
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Debug\Agenty WF.exe
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Debug\Agenty WF.pdb
-C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Debug\Agenty WF.csprojResolveAssemblyReference.cache
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Debug\Agenty_WF.Form1.resources
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Debug\Agenty_WF.Properties.Resources.resources
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Debug\Agenty WF.csproj.GenerateResource.Cache
@@ -37,3 +36,6 @@ C:\Users\user\Desktop\прога\Agenty-WF\Agenty WF\obj\Debug\Agenty WF.csproj.
 C:\Users\user\Desktop\прога\Agenty-WF\Agenty WF\obj\Debug\Agenty WF.exe
 C:\Users\user\Desktop\прога\Agenty-WF\Agenty WF\obj\Debug\Agenty WF.pdb
 C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\bin\Debug\1224.ico
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Debug\Agenty WF.csprojAssemblyReference.cache
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Debug\Agenty WF.csproj.ResolveComReference.cache
+C:\Users\kashinmv\Desktop\прога\Agenty WF\Agenty WF\obj\Debug\Agenty WF.csproj.CopyComplete
