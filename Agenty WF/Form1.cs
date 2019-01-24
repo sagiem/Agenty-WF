@@ -44,6 +44,7 @@ namespace Agenty_WF
         }
 
 
+
         private void button_openfileYR_Click(object sender, EventArgs e)
         {
             OpenFileDialog openfile = new OpenFileDialog();
@@ -83,6 +84,60 @@ namespace Agenty_WF
             //try
             //{
             Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text, Combob_YR.Text, textb_oplataYR.Text);
+            raschet.Exelreader();
+            raschet.ExelAkt();
+        }
+
+        private void button_openfileIP_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openfile = new OpenFileDialog();
+            openfile.Multiselect = false;
+            openfile.DefaultExt = "*.xml;.xls;*.xlsx";
+            openfile.Filter = "Microsoft Excel (*.xls*;*.xml*)|*.xls*;*.xml*";
+            openfile.Title = "Выберите документ Excel";
+            openfile.ShowDialog();
+            if (openfile.FileName != null)
+            {
+                this.file = openfile.FileName;
+            }
+        }
+
+        private void button_openfileFZ_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openfile = new OpenFileDialog();
+            openfile.Multiselect = false;
+            openfile.DefaultExt = "*.xml;.xls;*.xlsx";
+            openfile.Filter = "Microsoft Excel (*.xls*;*.xml*)|*.xls*;*.xml*";
+            openfile.Title = "Выберите документ Excel";
+            openfile.ShowDialog();
+            if (openfile.FileName != null)
+            {
+                this.file = openfile.FileName;
+            }
+        }
+
+        private void Combob_IP_Click(object sender, EventArgs e)
+        {
+            SQLiteCommand command = new SQLiteCommand("select * from ИП", DB);
+            //DB.Open();
+            Combob_IP.Items.Clear();
+            DbDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Combob_IP.Items.Add((string)reader["Имя"]);         //СтолбецТаблицы
+            }
+        }
+
+        private void button_otchetIP_Click(object sender, EventArgs e)
+        {
+            Raschet raschet = new Raschet(file, date_aktIP.Text, textb_aktnIP.Text, Combob_IP.Text, textb_oplataIP.Text);
+            raschet.Exelreader();
+            raschet.ExelOtchet();
+        }
+
+        private void button_aktIP_Click(object sender, EventArgs e)
+        {
+            Raschet raschet = new Raschet(file, date_aktIP.Text, textb_aktnIP.Text, Combob_IP.Text, textb_oplataIP.Text);
             raschet.Exelreader();
             raschet.ExelAkt();
         }
