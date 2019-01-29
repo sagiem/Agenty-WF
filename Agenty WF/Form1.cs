@@ -83,9 +83,9 @@ namespace Agenty_WF
 
             //try
             //{
-            Raschet raschet = new Raschet(file, date_aktYR.Text, textb_aktnYR.Text, Combob_YR.Text, textb_oplataYR.Text);
-            raschet.Exelreader();
-            raschet.ExelAkt();
+            RaschetIP raschetIP = new RaschetIP(file, date_aktYR.Text, textb_aktnYR.Text, Combob_YR.Text, textb_oplataYR.Text);
+            raschetIP.Exelreader();
+            raschetIP.ExelAkt();
         }
 
         private void button_openfileIP_Click(object sender, EventArgs e)
